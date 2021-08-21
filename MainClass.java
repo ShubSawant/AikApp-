@@ -89,7 +89,6 @@ import static javax.swing.JOptionPane.showMessageDialog;
     f.setSize(400,400);  
     f.setLayout(null);  
     f.setVisible(true); 
-    //System.out.println("ehehehehhe");
       frame.addWindowListener(new WindowAdapter() {
          public void windowClosing(WindowEvent windowEvent){
             System.exit(0);
@@ -103,10 +102,16 @@ import static javax.swing.JOptionPane.showMessageDialog;
          {
                 
                 showMessageDialog(null, "File name cannot be empty");
+				return;
 
          //   label.setText("File name cannot be Empty");
          
-            }
+           }
+		   else if(!tf.getText().equals("A")||!tf.getText().equals("B")||!tf.getText().equals("C")||!tf.getText().equals("D"))
+		   {
+			   JOptionPane.showMessageDialog(null,"Wrong option format","Error",JOptionPane.ERROR_MESSAGE); //icon added
+				return;
+		   }
 
             else{
           try {
@@ -234,9 +239,11 @@ import static javax.swing.JOptionPane.showMessageDialog;
                 if(question.equals("") || textfield1.getText().equals("") || textfield2.getText().equals("") || textfield3.getText().equals("") || textfield4.getText().equals("") || textfield5.getText().equals(""))
 
                 {
-                        statusLabel.setText("Data not entered correctly");
+                       // statusLabel.setText("Data not entered correctly");
+					   JOptionPane.showMessageDialog(null,"Incomplete input values provided.","Warning",JOptionPane.WARNING_MESSAGE);//Warning displayed
+				       return;
                 
-            }
+                }
             else
             {
                 
@@ -292,9 +299,11 @@ import static javax.swing.JOptionPane.showMessageDialog;
 
 
                 {
-                        statusLabel.setText("Data not entered correctly");
+                       // statusLabel.setText("Data not entered correctly");
+					   JOptionPane.showMessageDialog(null,"Incomplete input values provided.","Warning",JOptionPane.WARNING_MESSAGE);//Warning displayed
+				      return;
                 
-            }
+                }
             else
             {
                 
